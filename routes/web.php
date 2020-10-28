@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// 下記を追記
+// 画像アップロードページ用
+Route::get('/input', 'ImageController@input')->name('input');
+
+// 画像アップロード処理用
+Route::post('/upload', 'ImageController@upload')->name('upload');
+// 上記までを追記
