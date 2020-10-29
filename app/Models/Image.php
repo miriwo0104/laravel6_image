@@ -9,5 +9,5 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Image extends Model
 {
 	// 下記を追記
-	use SoftDelete;
+	use SoftDeletes;
 }
