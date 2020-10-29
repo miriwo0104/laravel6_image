@@ -14,10 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
-// 下記を追記
 // 画像アップロードページ用
 Route::get('/input', 'ImageController@input')->name('input');
 
 // 画像アップロード処理用
 Route::post('/upload', 'ImageController@upload')->name('upload');
-// 上記までを追記
+
+// 下記を追記する
+// 画像一覧ページ用
+Route::get('/output', 'ImageController@output')->name('output');
+
+// 画像詳細ページ用
+Route::get('/detail/{images_id}', 'ImageController@detail')->name('detail');
+
+// 画像表示ページ用
+Route::get('/display/{image_id}', 'ImageController@display')->name('display');
+// 上記までを追記する
