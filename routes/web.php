@@ -14,7 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
 // 下記を追記
 // 画像アップロードページ用
 Route::get('/input', 'ImageController@input')->name('input');
