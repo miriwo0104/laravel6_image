@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 // 下記を追記する
-use App\Model\Image;
+use App\Models\Image;
 use Illuminate\Support\Facades\Storage;
 // 上記までを追記する
 
