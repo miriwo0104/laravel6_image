@@ -3,14 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// 下記を追記する
 use App\Models\Image;
 use Illuminate\Support\Facades\Storage;
-// 上記までを追記する
 
 class ImageController extends Controller
 {
-    // 下記を追記する
     public function input()
     {
         return view('images/input');
@@ -47,6 +44,25 @@ class ImageController extends Controller
             return redirect(route('input'));
         }
 
+    }
+
+    // 下記を追記する
+    public function output()
+    {
+        $image_infos = Image::select('*')->get();
+        return view('images.output', ['image_infos' => $image_infos]);
+    }
+
+    public function detail($image_id)
+    {
+        $image_info = Image::find($image_id);
+        return view('images.detail', ['image_info' => $image_info]);
+    }
+
+    public function display($image_id)
+    {
+        $image_info = Image::find($image_id);
+        return Storage::response($image_info['file_path'], $image_info['file_name']);
     }
     // 上記までを追記する
 }

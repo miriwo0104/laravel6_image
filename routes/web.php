@@ -28,5 +28,5 @@ Route::get('/output', 'ImageController@output')->name('output');
 Route::get('/detail/{images_id}', 'ImageController@detail')->name('detail');
 
 // 画像表示ページ用
-Route::get('/display/{image_id}', 'ImageController@display')->name('display');
+Route::get('/display/{images_id}', 'ImageController@display')->name('display');
 // 上記までを追記する
