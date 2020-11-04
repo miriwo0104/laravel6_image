@@ -78,7 +78,7 @@ class ImageController extends Controller
     public function zipDownload(Request $request)
     {
         $image_info = Image::find($request['id']);
-        $zip_tmp_file_path = Storage::path('zip_tmp/');
+        $zip_tmp_file_path = Storage::disk('local')->path('zip_tmp/');
         $zip_tmp_file_name = Str::random(40) . '.zip';
         $zip_tmp_file_full_path = $zip_tmp_file_path . $zip_tmp_file_name;
 
