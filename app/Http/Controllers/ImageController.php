@@ -46,7 +46,6 @@ class ImageController extends Controller
 
     }
 
-    // 下記を追記する
     public function output()
     {
         $image_infos = Image::select('*')->get();
@@ -63,6 +62,13 @@ class ImageController extends Controller
     {
         $image_info = Image::find($image_id);
         return Storage::response($image_info['file_path'], $image_info['file_name']);
+    }
+
+    // 下記を追記
+    public function download(Request $request)
+    {
+        $image_info = Image::find($request['id']);
+        return Storage::download($image_info['file_path'], $image_info['file_name']);
     }
     // 上記までを追記する
 }
