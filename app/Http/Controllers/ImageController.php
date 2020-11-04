@@ -31,8 +31,8 @@ class ImageController extends Controller
 
         if ($request->file('file')->isValid([])) {
         
-            $file_name= $request->file('file')->getClientOriginalName(); // オリジナルファイルのファイル名の取得
-            $file_path= Storage::putFile('/images', $request->file('file'), 'public'); // ファイルのアップロードとアップロードパスの取得
+            $file_name = $request->file('file')->getClientOriginalName(); // オリジナルファイルのファイル名の取得
+            $file_path = Storage::putFile('/images', $request->file('file'), 'public'); // ファイルのアップロードとアップロードパスの取得
 
             $image_info = new Image();
             $image_info->file_path = $file_path;
