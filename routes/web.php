@@ -29,6 +29,9 @@ Route::get('/detail/{images_id}', 'ImageController@detail')->name('detail');
 // 画像表示ページ用
 Route::get('/display/{images_id}', 'ImageController@display')->name('display');
 
-// 下記を追記
 // ダウンロード用
 Route::post('/download', 'ImageController@download')->name('download');
+
+// 下記を追記
+// zipダウンロード用
+Route::post('/zip_download', 'ImageController@zipDownload')->name('zipDownload');
